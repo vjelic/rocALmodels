@@ -15,10 +15,9 @@
 # limitations under the License.
 
 # Get COCO 2017 data sets
-if [ -z $1 ]; then echo "Docker container name is missing" && exit 1; fi
-CONTAINER=$1
-COCO_DIR=${2:-"/data/coco2017_tfrecords"}
-CHECKPOINT_DIR=${3:-"/checkpoints"}
+COCO_DIR=${1:-"/media/ssdTraining/data/coco2017_tfrecords"}
+CHECKPOINT_DIR=${2:-"/media/ssdTraining/checkpoints"}
+RESEARCH_DIR=$(pwd)
 mkdir -p $COCO_DIR
 chmod 777 $COCO_DIR
 # Download backbone checkpoint
@@ -29,7 +28,7 @@ wget http://download.tensorflow.org/models/resnet_v1_50_2016_08_28.tar.gz
 tar -xzf resnet_v1_50_2016_08_28.tar.gz
 mkdir -p resnet_v1_50
 mv resnet_v1_50.ckpt resnet_v1_50/model.ckpt
-docker run --rm -u 123 -v $COCO_DIR:/data/coco2017_tfrecords $CONTAINER bash -c '
+cd $RESEARCH_DIR
+echo $RESEARCH_DIR
 # Create TFRecords
-bash /workdir/models/research/object_detection/dataset_tools/download_and_preprocess_mscoco.sh \
-    /data/coco2017_tfrecords'
+bash /media/RALImodels/models/research/object_detection/dataset_tools/download_and_preprocess_mscoco.sh $COCO_DIR

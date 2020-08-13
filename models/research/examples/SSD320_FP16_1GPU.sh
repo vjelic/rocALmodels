@@ -13,7 +13,7 @@
 # limitations under the License.
 
 CKPT_DIR=${1:-"/results/SSD320_FP16_1GPU"}
-PIPELINE_CONFIG_PATH=${2:-"/workdir/models/research/configs"}"/ssd320_full_1gpus.config"
+PIPELINE_CONFIG_PATH=${2:-"/media/RALImodels/models/research/configs"}"/ssd320_full_1gpus.config"
 
 TENSOR_OPS=0
 export TF_ENABLE_CUBLAS_TENSOR_OP_MATH_FP32=${TENSOR_OPS}

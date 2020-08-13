@@ -13,7 +13,7 @@
 # limitations under the License.
 
 CKPT_DIR=${1:-"/results/SSD320_FP16_1GPU"}
-PIPELINE_CONFIG_PATH=${2:-"/workdir/models/research/configs"}"/ssd320_bench.config"
+PIPELINE_CONFIG_PATH=${2:-"/media/RALImodels/models/research/configs"}"/ssd320_bench.config"
 GPUS=1
 
 TENSOR_OPS=0
