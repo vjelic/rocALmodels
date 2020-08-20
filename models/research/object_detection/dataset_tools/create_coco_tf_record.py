@@ -134,10 +134,10 @@ def create_tf_example(image,
     if x + width > image_width or y + height > image_height:
       num_annotations_skipped += 1
       continue
-    xmin.append(float(x) / image_width)
-    xmax.append(float(x + width) / image_width)
-    ymin.append(float(y) / image_height)
-    ymax.append(float(y + height) / image_height)
+    xmin.append(float(x))
+    xmax.append(float(width))
+    ymin.append(float(y))
+    ymax.append(float(height))
     is_crowd.append(object_annotations['iscrowd'])
     category_id = int(object_annotations['category_id'])
     category_ids.append(category_id)
@@ -179,6 +179,8 @@ def create_tf_example(image,
           dataset_util.float_list_feature(ymax),
       'image/object/class/text':
           dataset_util.bytes_list_feature(category_names),
+      'image/object/class/label':
+          dataset_util.int64_list_feature(category_ids),
       'image/object/is_crowd':
           dataset_util.int64_list_feature(is_crowd),
       'image/object/area':
