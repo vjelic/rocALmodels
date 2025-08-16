@@ -1,0 +1,522 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Glog.AI",
+          "organization": "Glog.AI",
+          "fullName": "Glog, Making software more secure",
+          "version": "1.0.0",
+          "semanticVersion": "1.0.0",
+          "informationUri": "https://www.glog.ai",
+          "rules": [
+            {
+              "id": "glog-654139f6-9758-4d91-8ec7-bb0443d14a3d",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe \"Unvalidated tarfile.extractall Usage Vulnerability\" in Python refers to a security flaw that occurs when a Python script uses the `tarfile.extractall` method without validating the contents of the tarfile. This can lead to a path traversal attack, where an attacker can create a tarfile that, when extracted, overwrites arbitrary files on the system. This can lead to unauthorized access, data corruption, or even remote code execution.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to validate the paths of the files in the tarfile before extraction. This can be done by checking each file's path in the tarfile and ensuring that it does not contain directory traversal sequences (like \"../\"). \n\n## Source Code Fix Recommendation\n\nHere is a sample code fix for the vulnerability:\n\n```python\nimport os\nimport tarfile\n\ndef safe_extractall(tar, path):\n    for member in tar.getmembers():\n        # Ensure that there is no path traversal by checking for directory traversal sequences\n        if '..' in member.name or os.path.isabs(member.name):\n            raise ValueError(f\"Suspicious path found: {member.name}\")\n        tar.extract(member, path)\n\nwith tarfile.open(filepath, 'r:gz') as tar:\n    safe_extractall(tar, dataset_dir)\n```\n\n## Library Dependencies\n\nThe code example requires the following Python standard library:\n\n- `os`\n- `tarfile`\n\n## References\n\n- [OWASP - Path Traversal](https://owasp.org/www-community/attacks/Path_Traversal)\n- [CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')](https://cwe.mitre.org/data/definitions/22.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B202"
+                ]
+              }
+            },
+            {
+              "id": "glog-605b7460-5dc6-4285-bc5d-9bdafa715a6b",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe \"Vulnerability in URL Audit for Permitted Schemes\" in Python refers to a situation where an application does not properly validate the schemes of the URLs it processes. This can lead to a situation where an attacker can manipulate the URL to access unauthorized resources or perform malicious activities. In the provided code, the URL is directly used to retrieve a file without any validation of the scheme.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to validate the scheme of the URL before processing it. Only allow URLs with safe schemes such as `http`, `https`, `ftp`, etc. Reject any URL with a scheme that is not in the list of permitted schemes.\n\n## Source Code Fix Recommendation\n\nHere is a recommended fix for the provided code:\n\n```python\nimport urllib.parse\n\n_DATA_URL = \"http://example.com/data.txt\"\nfilepath = \"/path/to/save/file\"\n\nparsed_url = urllib.parse.urlparse(_DATA_URL)\nif parsed_url.scheme not in [\"http\", \"https\", \"ftp\"]:\n    raise ValueError(f\"Invalid URL scheme: {parsed_url.scheme}\")\n\nfilepath, _ = urllib.request.urlretrieve(_DATA_URL, filepath)\n```\n\nIn this code, we first parse the URL using `urllib.parse.urlparse`. Then we check if the scheme of the URL is in the list of permitted schemes. If it is not, we raise a `ValueError`. If it is, we proceed to retrieve the file.\n\n## Library Dependencies\n\nThe provided code requires the following Python standard library:\n\n- `urllib`\n\n## References\n\n- [OWASP - Unvalidated Redirects and Forwards Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html)\n- [CWE-346: Origin Validation Error](https://cwe.mitre.org/data/definitions/346.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B310"
+                ]
+              }
+            },
+            {
+              "id": "glog-aec136d9-202a-47f5-952e-1e003192ce9e",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe vulnerability in URL Audit for Permitted Schemes in Python is a security flaw that allows an attacker to manipulate the URL scheme that is being passed to the `urllib.request.urlretrieve` function. This can lead to various security issues such as remote file inclusion (RFI), local file inclusion (LFI), or even command execution.\n\nThe `urllib.request.urlretrieve` function is used to retrieve a file from a remote server. If the URL scheme is not properly validated, an attacker can pass a malicious URL that points to a local file (file://) or even a command (gopher://, dict://, etc.).\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to validate the URL scheme before passing it to the `urllib.request.urlretrieve` function. Only allow safe URL schemes such as `http` or `https`.\n\n## Source Code Fix Recommendation\n\nHere is a simple way to validate the URL scheme:\n\n```python\nimport urllib.parse\n\ndef is_safe_url(url):\n    try:\n        result = urllib.parse.urlparse(url)\n        return result.scheme in ['http', 'https']\n    except ValueError:\n        return False\n\ntarball_url = 'http://example.com/file.tar.gz'\nfilepath = '/path/to/save/file'\n\nif is_safe_url(tarball_url):\n    filepath, _ = urllib.request.urlretrieve(tarball_url, filepath)\nelse:\n    print('Unsafe URL detected')\n```\n\n## Library Dependencies\n\nThe code example requires the following Python standard library:\n\n- urllib\n\n## References\n\n- [OWASP Python Security - URL Audit](https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html#python)\n- [CWE-918: Server-Side Request Forgery (SSRF)](https://cwe.mitre.org/data/definitions/918.html)\n\nPlease note that the links provided are accessible to anonymous users at the time of writing this report."
+              },
+              "properties": {
+                "tags": [
+                  "B310"
+                ]
+              }
+            },
+            {
+              "id": "glog-91169e61-83a9-44d0-8701-36c31baba94a",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe vulnerability in URL Audit for Permitted Schemes in Python is a security flaw that allows an attacker to manipulate the URL scheme that is being passed to the `urllib.request.urlretrieve` function. This can lead to various security issues such as remote file inclusion (RFI), local file inclusion (LFI), or even command execution.\n\nThe `urlretrieve` function is used to retrieve a file from a remote server. If the URL scheme is not properly validated, an attacker can pass a malicious URL that points to a local file (file://) or even a command (gopher://, dict://).\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to validate the URL scheme before passing it to the `urlretrieve` function. Only allow safe URL schemes such as `http` or `https`. Avoid using `urlretrieve` with user-supplied URLs when possible.\n\n## Source Code Fix Recommendation\n\nHere is a simple way to validate the URL scheme:\n\n```python\nimport urllib.parse\n\ndef is_safe_url(url):\n    try:\n        result = urllib.parse.urlparse(url)\n        return result.scheme in ['http', 'https']\n    except ValueError:\n        return False\n\nsynset_url = \"http://example.com\"\nfilename, _ = urllib.request.urlretrieve(synset_url) if is_safe_url(synset_url) else (None, None)\n```\n\nIn this code, the `is_safe_url` function checks if the URL scheme is either `http` or `https`.\n\n## Library Dependencies\n\nThe code example requires the following Python standard library:\n\n- `urllib`\n\n## References\n\n- [CWE-918: Server-Side Request Forgery (SSRF)](https://cwe.mitre.org/data/definitions/918.html)\n\nPlease note that the links provided are accessible to anonymous users at the time of writing this report."
+              },
+              "properties": {
+                "tags": [
+                  "B310"
+                ]
+              }
+            },
+            {
+              "id": "glog-7493a4af-a196-423d-912c-c33473745571",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe \"Vulnerability in URL Audit for Permitted Schemes\" in Python refers to a situation where an application does not properly validate the schemes of the URLs it processes. This can lead to a situation where an attacker can manipulate the URL to access unauthorized resources or perform other malicious activities. In the provided code snippet, the application retrieves a file from a URL without validating the scheme of the URL.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to always validate the scheme of the URLs your application processes. Only allow URLs with schemes that your application is designed to handle. For instance, if your application is only meant to handle HTTP and HTTPS URLs, then it should reject URLs with other schemes such as FTP, file, etc.\n\n## Source Code Fix Recommendation\n\nHere is a simple way to validate the scheme of the URL before retrieving the file:\n\n```python\nimport urllib.parse\n\n_DATA_URL = 'http://example.com/'\nfilename = 'file.txt'\n\nurl = _DATA_URL + filename\nparsed_url = urllib.parse.urlparse(url)\n\nif parsed_url.scheme not in ['http', 'https']:\n    raise ValueError(f'Invalid URL scheme: {parsed_url.scheme}')\n\nfilepath, _ = urllib.request.urlretrieve(url)\n```\n\nIn this code, `urllib.parse.urlparse` is used to parse the URL and extract the scheme. If the scheme is not 'http' or 'https', a `ValueError` is raised.\n\n## Library Dependencies\n\nThe code example requires the following Python standard library:\n\n- `urllib`\n\n## References\n\n- [OWASP - Unvalidated Redirects and Forwards Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html)\n- [CWE-346: Origin Validation Error](https://cwe.mitre.org/data/definitions/346.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B310"
+                ]
+              }
+            },
+            {
+              "id": "glog-8f04a0b9-832e-4105-b21f-2c02f9ffdeea",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe `xml.etree.ElementTree.parse` function in Python's standard library is vulnerable to XML External Entity (XXE) attacks. This vulnerability can lead to disclosure of confidential data, denial of service, server side request forgery, port scanning from the perspective of the machine where the parser is located, and other system impacts.\n\nIf an attacker can supply XML that is processed by `ET.parse`, they can exploit this vulnerability to read local files on the server, make network requests, or consume excessive amounts of system resources, depending on the capabilities of the XML parser.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, you should avoid using `ET.parse` to parse untrusted XML data. Instead, use the `defusedxml` library, which is a Python package that patches several known XML-related vulnerabilities in the standard library and provides a more secure alternative for parsing XML data.\n\n## Source Code Fix Recommendation\n\nReplace:\n\n```python\nimport xml.etree.ElementTree as ET\ntree = ET.parse(xml_file)\n```\n\nWith:\n\n```python\nfrom defusedxml.ElementTree import parse\ntree = parse(xml_file)\n```\n\n## Library Dependencies\n\nThe fixed code requires the `defusedxml` library. You can install it using pip:\n\n```\npip install defusedxml\n```\n\n## References\n\n- [CWE-611: Improper Restriction of XML External Entity Reference ('XXE')](https://cwe.mitre.org/data/definitions/611.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B314"
+                ]
+              }
+            },
+            {
+              "id": "glog-e34d19a3-4046-40dd-b210-44dcb64340a3",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe vulnerability in URL Audit for Permitted Schemes in Python is a security flaw that allows an attacker to manipulate the URL scheme that is being passed to the `urllib.request.urlretrieve` function. This can lead to various security issues such as remote file inclusion (RFI), local file inclusion (LFI), or even remote code execution (RCE) if the attacker is able to control the URL scheme and point it to a malicious resource.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to validate and sanitize all user inputs. Specifically, for URLs, ensure that the scheme is in a list of permitted schemes (e.g., 'http', 'https') before passing it to the `urllib.request.urlretrieve` function. Avoid using user-supplied URLs directly without validation.\n\n## Source Code Fix Recommendation\n\nHere is a simple fix for the vulnerability:\n\n```python\nimport urllib.parse\nimport urllib.request\n\n# Ensure the URL is well-formed\nparsed_url = urllib.parse.urlparse(synset_to_human_url)\n\n# Check the scheme of the URL\nif parsed_url.scheme not in ['http', 'https']:\n    raise ValueError('Invalid URL scheme')\n\nfilename, _ = urllib.request.urlretrieve(synset_to_human_url)\n```\n\n## Library Dependencies\n\nThe code example requires the following Python standard library modules:\n\n- `urllib.parse`\n- `urllib.request`\n\n## References\n\n- [CWE-918: Server-Side Request Forgery (SSRF)](https://cwe.mitre.org/data/definitions/918.html)\n- [CWE-23: Relative Path Traversal](https://cwe.mitre.org/data/definitions/23.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B310"
+                ]
+              }
+            },
+            {
+              "id": "glog-c315a659-e35d-4bb9-98cd-9237ad3dce8a",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\n\"Potential Unsafe Use of Temporary File/Directory\" vulnerability in Python refers to the insecure creation or use of temporary files or directories. This can lead to a variety of security issues, such as race conditions, information disclosure, or privilege escalation. An attacker could exploit this vulnerability to overwrite or read sensitive data, or execute arbitrary code with the permissions of the user running the vulnerable program.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, you should:\n\n- Use secure functions for creating temporary files or directories. In Python, the `tempfile` module provides such functions, which create temporary files in the most secure manner possible, including appropriate file permissions to avoid unauthorized access.\n- Avoid using predictable names for temporary files or directories. This can prevent an attacker from guessing the name of the file and using it for malicious purposes.\n- Delete temporary files as soon as they are no longer needed.\n\n## Source Code Fix Recommendation\n\nThe provided code snippet does not show the creation or use of a temporary file or directory, so it's not possible to provide a specific fix. However, here is a general example of how to securely create a temporary file in Python:\n\n```python\nimport tempfile\n\n# Insecure way\n# temp = open(\"/tmp/myapp.\" + str(os.getpid()), \"w+b\")\n\n# Secure way\ntemp = tempfile.NamedTemporaryFile(delete=True)\n```\n\nIn the secure way, the `NamedTemporaryFile` function from the `tempfile` module is used to create a temporary file. The `delete=True` argument ensures that the file is deleted as soon as it is closed.\n\n## Library Dependencies\n\nThe provided code snippet does not show any library dependencies.\n\n## References\n\n- [CWE-377: Insecure Temporary File](https://cwe.mitre.org/data/definitions/377.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B108"
+                ]
+              }
+            },
+            {
+              "id": "glog-d2780a44-2150-4248-a5d1-7c5d00379dd4",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\n\"Potential Unsafe Use of Temporary File/Directory\" vulnerability in Python refers to the insecure creation or use of temporary files or directories. This can lead to a variety of security issues, such as race conditions, information disclosure, or privilege escalation. An attacker could exploit this vulnerability to overwrite or read sensitive data, or execute arbitrary code with the permissions of the user running the vulnerable program.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, you should:\n\n- Use secure functions for creating temporary files or directories. In Python, the `tempfile` module provides such functions, which create temporary files in the most secure manner possible, including appropriate file permissions to avoid unauthorized access.\n- Avoid using predictable names for temporary files or directories. This can prevent an attacker from guessing the name of the file and using it for malicious purposes.\n- Delete temporary files as soon as they are no longer needed.\n\n## Source Code Fix Recommendation\n\nThe provided code snippet does not show the creation or use of a temporary file or directory, so it's not possible to provide a specific fix. However, here is a general example of how to securely create a temporary file in Python:\n\n```python\nimport tempfile\n\n# Insecure way\n# temp = open(\"/tmp/myapp.\" + str(os.getpid()), \"w+b\")\n\n# Secure way\ntemp = tempfile.NamedTemporaryFile(delete=True)\n```\n\nIn the secure way, the `NamedTemporaryFile` function from the `tempfile` module is used to create a temporary file. The `delete=True` argument ensures that the file is deleted as soon as it is closed.\n\n## Library Dependencies\n\nThe provided code snippet does not show any library dependencies.\n\n## References\n\n- [CWE-377: Insecure Temporary File](https://cwe.mitre.org/data/definitions/377.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B108"
+                ]
+              }
+            },
+            {
+              "id": "glog-933699d3-4589-4f64-b0de-0f634caa0d6d",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\n\"Potential Unsafe Use of Temporary File/Directory\" vulnerability in Python refers to the insecure creation or use of temporary files or directories. This can lead to a variety of security issues, such as race conditions, information disclosure, or privilege escalation. An attacker could exploit this vulnerability to overwrite or read sensitive data, or execute arbitrary code with the permissions of the user running the vulnerable program.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, you should:\n\n- Use secure functions for creating temporary files or directories. In Python, the `tempfile` module provides such functions, which create temporary files in the most secure manner possible, including appropriate file permissions to avoid unauthorized access.\n- Avoid using predictable names for temporary files or directories. This can prevent an attacker from guessing the name of the file and using it for malicious purposes.\n- Delete temporary files as soon as they are no longer needed.\n\n## Source Code Fix Recommendation\n\nThe provided code snippet does not show the creation or use of a temporary file or directory, so it's not possible to provide a specific fix. However, here is a general example of how to securely create a temporary file in Python:\n\n```python\nimport tempfile\n\n# Insecure way\n# temp = open(\"/tmp/myapp.\" + str(os.getpid()), \"w+b\")\n\n# Secure way\ntemp = tempfile.NamedTemporaryFile(delete=True)\n```\n\nIn the secure way, the `NamedTemporaryFile` function from the `tempfile` module is used to create a temporary file. The `delete=True` argument ensures that the file is deleted as soon as it is closed.\n\n## Library Dependencies\n\nThe provided code snippet does not show any library dependencies.\n\n## References\n\n- [CWE-377: Insecure Temporary File](https://cwe.mitre.org/data/definitions/377.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B108"
+                ]
+              }
+            }
+          ],
+          "language": "en-US",
+          "contents": [
+            "localizedData",
+            "nonLocalizedData"
+          ],
+          "isComprehensive": false
+        }
+      },
+      "language": "en-US",
+      "results": [
+        {
+          "ruleId": "glog-654139f6-9758-4d91-8ec7-bb0443d14a3d",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Unvalidated tarfile.extractall Usage Vulnerability"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/slim/datasets/dataset_utils.py"
+                },
+                "region": {
+                  "startLine": 98,
+                  "startColumn": 3,
+                  "endLine": 98,
+                  "endColumn": 57,
+                  "snippet": {
+                    "text": "  tarfile.open(filepath, 'r:gz').extractall(dataset_dir)\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 97,
+                  "endLine": 99,
+                  "snippet": {
+                    "text": "  print('Successfully downloaded', filename, statinfo.st_size, 'bytes.')\n  tarfile.open(filepath, 'r:gz').extractall(dataset_dir)\n\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "HIGH",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-605b7460-5dc6-4285-bc5d-9bdafa715a6b",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "\"Vulnerability in URL Audit for Permitted Schemes\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/slim/datasets/download_and_convert_cifar10.py"
+                },
+                "region": {
+                  "startLine": 138,
+                  "startColumn": 19,
+                  "endLine": 138,
+                  "endColumn": 77,
+                  "snippet": {
+                    "text": "    filepath, _ = urllib.request.urlretrieve(_DATA_URL, filepath, _progress)\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 137,
+                  "endLine": 139,
+                  "snippet": {
+                    "text": "      sys.stdout.flush()\n    filepath, _ = urllib.request.urlretrieve(_DATA_URL, filepath, _progress)\n    print()\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-aec136d9-202a-47f5-952e-1e003192ce9e",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "\"Vulnerability in URL Audit for Permitted Schemes\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/slim/datasets/dataset_utils.py"
+                },
+                "region": {
+                  "startLine": 94,
+                  "startColumn": 17,
+                  "endLine": 94,
+                  "endColumn": 77,
+                  "snippet": {
+                    "text": "  filepath, _ = urllib.request.urlretrieve(tarball_url, filepath, _progress)\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 93,
+                  "endLine": 95,
+                  "snippet": {
+                    "text": "    sys.stdout.flush()\n  filepath, _ = urllib.request.urlretrieve(tarball_url, filepath, _progress)\n  print()\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-91169e61-83a9-44d0-8701-36c31baba94a",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "\"Vulnerability in URL Audit for Permitted Schemes\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/slim/datasets/imagenet.py"
+                },
+                "region": {
+                  "startLine": 94,
+                  "startColumn": 17,
+                  "endLine": 94,
+                  "endColumn": 55,
+                  "snippet": {
+                    "text": "  filename, _ = urllib.request.urlretrieve(synset_url)\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 93,
+                  "endLine": 95,
+                  "snippet": {
+                    "text": "\n  filename, _ = urllib.request.urlretrieve(synset_url)\n  synset_list = [s.strip() for s in open(filename).readlines()]\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-7493a4af-a196-423d-912c-c33473745571",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "\"Vulnerability in URL Audit for Permitted Schemes\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/slim/datasets/download_and_convert_mnist.py"
+                },
+                "region": {
+                  "startLine": 163,
+                  "startColumn": 21,
+                  "endLine": 164,
+                  "endColumn": 58,
+                  "snippet": {
+                    "text": "      filepath, _ = urllib.request.urlretrieve(_DATA_URL + filename,\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 162,
+                  "endLine": 166,
+                  "snippet": {
+                    "text": "        sys.stdout.flush()\n      filepath, _ = urllib.request.urlretrieve(_DATA_URL + filename,\n                                               filepath,\n                                               _progress)\n      print()\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-8f04a0b9-832e-4105-b21f-2c02f9ffdeea",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "\"Vulnerability in Parsing Untrusted XML Data with xml.etree.ElementTree.parse: Use Defusedxml Equivalent Function\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/slim/datasets/process_bounding_boxes.py"
+                },
+                "region": {
+                  "startLine": 122,
+                  "startColumn": 12,
+                  "endLine": 122,
+                  "endColumn": 30,
+                  "snippet": {
+                    "text": "    tree = ET.parse(xml_file)\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 121,
+                  "endLine": 123,
+                  "snippet": {
+                    "text": "  try:\n    tree = ET.parse(xml_file)\n  except Exception:\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-e34d19a3-4046-40dd-b210-44dcb64340a3",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "\"Vulnerability in URL Audit for Permitted Schemes\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/slim/datasets/imagenet.py"
+                },
+                "region": {
+                  "startLine": 99,
+                  "startColumn": 17,
+                  "endLine": 99,
+                  "endColumn": 64,
+                  "snippet": {
+                    "text": "  filename, _ = urllib.request.urlretrieve(synset_to_human_url)\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 98,
+                  "endLine": 100,
+                  "snippet": {
+                    "text": "\n  filename, _ = urllib.request.urlretrieve(synset_to_human_url)\n  synset_to_human_list = open(filename).readlines()\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-c315a659-e35d-4bb9-98cd-9237ad3dce8a",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Potential Unsafe Use of Temporary File/Directory"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/slim/eval_image_classifier.py"
+                },
+                "region": {
+                  "startLine": 40,
+                  "startColumn": 24,
+                  "endLine": 41,
+                  "endColumn": 39,
+                  "snippet": {
+                    "text": "tf.app.flags.DEFINE_string(\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 40,
+                  "endLine": 45,
+                  "snippet": {
+                    "text": "tf.app.flags.DEFINE_string(\n    'checkpoint_path', '/tmp/tfmodel/',\n    'The directory where the model was written to or an absolute path to a '\n    'checkpoint file.')\n\ntf.app.flags.DEFINE_string(\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "MEDIUM"
+          }
+        },
+        {
+          "ruleId": "glog-d2780a44-2150-4248-a5d1-7c5d00379dd4",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Potential Unsafe Use of Temporary File/Directory"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/slim/eval_image_classifier.py"
+                },
+                "region": {
+                  "startLine": 45,
+                  "startColumn": 17,
+                  "endLine": 46,
+                  "endColumn": 32,
+                  "snippet": {
+                    "text": "tf.app.flags.DEFINE_string(\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 45,
+                  "endLine": 48,
+                  "snippet": {
+                    "text": "tf.app.flags.DEFINE_string(\n    'eval_dir', '/tmp/tfmodel/', 'Directory where the results are saved to.')\n\ntf.app.flags.DEFINE_integer(\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "MEDIUM"
+          }
+        },
+        {
+          "ruleId": "glog-933699d3-4589-4f64-b0de-0f634caa0d6d",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Potential Unsafe Use of Temporary File/Directory"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/slim/train_image_classifier.py"
+                },
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 18,
+                  "endLine": 34,
+                  "endColumn": 33,
+                  "snippet": {
+                    "text": "tf.app.flags.DEFINE_string(\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 33,
+                  "endLine": 37,
+                  "snippet": {
+                    "text": "tf.app.flags.DEFINE_string(\n    'train_dir', '/tmp/tfmodel/',\n    'Directory where checkpoints and event logs are written to.')\n\ntf.app.flags.DEFINE_integer('num_clones', 1,\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "MEDIUM"
+          }
+        }
+      ],
+      "newlineSequences": [
+        "\r\n",
+        "\n"
+      ]
+    }
+  ]
+}
