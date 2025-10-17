@@ -12,6 +12,30 @@
           "informationUri": "https://www.glog.ai",
           "rules": [
             {
+              "id": "6589617f-8aa7-3a0c-820b-3bb6c50f8fb3",
+              "name": "resources.rules.string-concat-in-list",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.string-concat-in-list"
+              },
+              "fullDescription": {
+                "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.string-concat-in-list"
+                ]
+              }
+            },
+            {
               "id": "8f61a726-64ac-32cb-8971-8e18519ea756",
               "name": "resources.rules.string-concat-in-list",
               "shortDescription": {
@@ -56,30 +80,6 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.insecure-xml-use"
-                ]
-              }
-            },
-            {
-              "id": "6589617f-8aa7-3a0c-820b-3bb6c50f8fb3",
-              "name": "resources.rules.string-concat-in-list",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.string-concat-in-list"
-              },
-              "fullDescription": {
-                "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.string-concat-in-list"
                 ]
               }
             },
@@ -204,54 +204,6 @@
               }
             },
             {
-              "id": "c7da71de-a8ad-326a-bc4e-81f6f34f46c2",
-              "name": "resources.rules.use-workdir",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.use-workdir"
-              },
-              "fullDescription": {
-                "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner."
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3003](https://github.com/hadolint/hadolint/wiki/DL3003)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.use-workdir"
-                ]
-              }
-            },
-            {
-              "id": "8879ca19-176d-3207-beb0-740063f1f62f",
-              "name": "resources.rules.use-workdir",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.use-workdir"
-              },
-              "fullDescription": {
-                "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner."
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3003](https://github.com/hadolint/hadolint/wiki/DL3003)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.use-workdir"
-                ]
-              }
-            },
-            {
               "id": "8901e8ae-2fd7-3589-abbf-ef058e021935",
               "name": "resources.rules.use-workdir",
               "shortDescription": {
@@ -296,6 +248,54 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.missing-no-install-recommends"
+                ]
+              }
+            },
+            {
+              "id": "8879ca19-176d-3207-beb0-740063f1f62f",
+              "name": "resources.rules.use-workdir",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.use-workdir"
+              },
+              "fullDescription": {
+                "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3003](https://github.com/hadolint/hadolint/wiki/DL3003)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.use-workdir"
+                ]
+              }
+            },
+            {
+              "id": "c7da71de-a8ad-326a-bc4e-81f6f34f46c2",
+              "name": "resources.rules.use-workdir",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.use-workdir"
+              },
+              "fullDescription": {
+                "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3003](https://github.com/hadolint/hadolint/wiki/DL3003)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.use-workdir"
                 ]
               }
             },
@@ -348,7 +348,7 @@
               }
             },
             {
-              "id": "be5610c1-ac28-3598-9c57-aaf1f1e97acc",
+              "id": "ea058f43-8b8c-3566-84bc-63f6bbaa1d47",
               "name": "resources.rules.set-pipefail",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.set-pipefail"
@@ -372,7 +372,7 @@
               }
             },
             {
-              "id": "ea058f43-8b8c-3566-84bc-63f6bbaa1d47",
+              "id": "be5610c1-ac28-3598-9c57-aaf1f1e97acc",
               "name": "resources.rules.set-pipefail",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.set-pipefail"
@@ -540,30 +540,6 @@
               }
             },
             {
-              "id": "35b8fd77-0c3e-3c61-bbe7-b40ef327d521",
-              "name": "resources.rules.unquoted-csv-writer",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.unquoted-csv-writer"
-              },
-              "fullDescription": {
-                "text": "Found an unquoted CSV writer. This is susceptible to injection. Use 'quoting=csv.QUOTE_ALL'."
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "Found an unquoted CSV writer. This is susceptible to injection. Use 'quoting=csv.QUOTE_ALL'.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Found an unquoted CSV writer. This is susceptible to injection. Use 'quoting=csv.QUOTE_ALL'.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://affinity-it-security.com/how-to-prevent-csv-injection/](https://affinity-it-security.com/how-to-prevent-csv-injection/)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.unquoted-csv-writer"
-                ]
-              }
-            },
-            {
               "id": "1abf4806-ef44-34be-877b-8ed6f7f2d262",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
@@ -588,6 +564,30 @@
               }
             },
             {
+              "id": "35b8fd77-0c3e-3c61-bbe7-b40ef327d521",
+              "name": "resources.rules.unquoted-csv-writer",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.unquoted-csv-writer"
+              },
+              "fullDescription": {
+                "text": "Found an unquoted CSV writer. This is susceptible to injection. Use 'quoting=csv.QUOTE_ALL'."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Found an unquoted CSV writer. This is susceptible to injection. Use 'quoting=csv.QUOTE_ALL'.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Found an unquoted CSV writer. This is susceptible to injection. Use 'quoting=csv.QUOTE_ALL'.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://affinity-it-security.com/how-to-prevent-csv-injection/](https://affinity-it-security.com/how-to-prevent-csv-injection/)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.unquoted-csv-writer"
+                ]
+              }
+            },
+            {
               "id": "919eaec1-cdcb-312f-90ce-78f11e0176b3",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
@@ -608,6 +608,30 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.dlint-catastrophic-redos"
+                ]
+              }
+            },
+            {
+              "id": "88579926-ab7e-3b5a-9e54-ad3cd193f2c5",
+              "name": "resources.rules.unquoted-csv-writer",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.unquoted-csv-writer"
+              },
+              "fullDescription": {
+                "text": "Found an unquoted CSV writer. This is susceptible to injection. Use 'quoting=csv.QUOTE_ALL'."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Found an unquoted CSV writer. This is susceptible to injection. Use 'quoting=csv.QUOTE_ALL'.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Found an unquoted CSV writer. This is susceptible to injection. Use 'quoting=csv.QUOTE_ALL'.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://affinity-it-security.com/how-to-prevent-csv-injection/](https://affinity-it-security.com/how-to-prevent-csv-injection/)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.unquoted-csv-writer"
                 ]
               }
             },
@@ -656,30 +680,6 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.eqeq-is-bad"
-                ]
-              }
-            },
-            {
-              "id": "88579926-ab7e-3b5a-9e54-ad3cd193f2c5",
-              "name": "resources.rules.unquoted-csv-writer",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.unquoted-csv-writer"
-              },
-              "fullDescription": {
-                "text": "Found an unquoted CSV writer. This is susceptible to injection. Use 'quoting=csv.QUOTE_ALL'."
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "Found an unquoted CSV writer. This is susceptible to injection. Use 'quoting=csv.QUOTE_ALL'.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Found an unquoted CSV writer. This is susceptible to injection. Use 'quoting=csv.QUOTE_ALL'.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://affinity-it-security.com/how-to-prevent-csv-injection/](https://affinity-it-security.com/how-to-prevent-csv-injection/)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.unquoted-csv-writer"
                 ]
               }
             },
@@ -804,7 +804,7 @@
               }
             },
             {
-              "id": "e6222a69-83f3-3eff-9191-b558768584fd",
+              "id": "f57c5bb1-d5c3-3ff2-ab68-a1b27aa1675d",
               "name": "resources.rules.string-concat-in-list",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.string-concat-in-list"
@@ -828,7 +828,7 @@
               }
             },
             {
-              "id": "f57c5bb1-d5c3-3ff2-ab68-a1b27aa1675d",
+              "id": "e6222a69-83f3-3eff-9191-b558768584fd",
               "name": "resources.rules.string-concat-in-list",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.string-concat-in-list"
@@ -924,30 +924,6 @@
               }
             },
             {
-              "id": "b1c0b718-85e2-3dd3-a39f-3b23c2787e3a",
-              "name": "resources.rules.string-concat-in-list",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.string-concat-in-list"
-              },
-              "fullDescription": {
-                "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.string-concat-in-list"
-                ]
-              }
-            },
-            {
               "id": "32f17061-1f41-39aa-be44-8df74e74bc9a",
               "name": "resources.rules.string-concat-in-list",
               "shortDescription": {
@@ -972,7 +948,7 @@
               }
             },
             {
-              "id": "b2b551a3-4319-3173-9521-addb8336f4cb",
+              "id": "b1c0b718-85e2-3dd3-a39f-3b23c2787e3a",
               "name": "resources.rules.string-concat-in-list",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.string-concat-in-list"
@@ -996,7 +972,7 @@
               }
             },
             {
-              "id": "54b38b04-e8ef-35e8-a85d-aa392c2e4bec",
+              "id": "b2b551a3-4319-3173-9521-addb8336f4cb",
               "name": "resources.rules.string-concat-in-list",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.string-concat-in-list"
@@ -1068,7 +1044,55 @@
               }
             },
             {
+              "id": "54b38b04-e8ef-35e8-a85d-aa392c2e4bec",
+              "name": "resources.rules.string-concat-in-list",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.string-concat-in-list"
+              },
+              "fullDescription": {
+                "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.string-concat-in-list"
+                ]
+              }
+            },
+            {
               "id": "251f9d19-47bc-3253-8cad-4384ead969df",
+              "name": "resources.rules.string-concat-in-list",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.string-concat-in-list"
+              },
+              "fullDescription": {
+                "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.string-concat-in-list"
+                ]
+              }
+            },
+            {
+              "id": "9b8c52a2-5592-35ab-b6ff-42d3d0a71299",
               "name": "resources.rules.string-concat-in-list",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.string-concat-in-list"
@@ -1140,30 +1164,6 @@
               }
             },
             {
-              "id": "9b8c52a2-5592-35ab-b6ff-42d3d0a71299",
-              "name": "resources.rules.string-concat-in-list",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.string-concat-in-list"
-              },
-              "fullDescription": {
-                "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.string-concat-in-list"
-                ]
-              }
-            },
-            {
               "id": "25c662ac-e3c1-3870-918d-6e1383e1b227",
               "name": "resources.rules.string-concat-in-list",
               "shortDescription": {
@@ -1188,7 +1188,7 @@
               }
             },
             {
-              "id": "0cedfc6c-8871-3191-8d0c-1eb81140069d",
+              "id": "cf9c9fa1-aeba-3bbe-9b07-d74816ffc282",
               "name": "resources.rules.string-concat-in-list",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.string-concat-in-list"
@@ -1212,7 +1212,7 @@
               }
             },
             {
-              "id": "cf9c9fa1-aeba-3bbe-9b07-d74816ffc282",
+              "id": "0cedfc6c-8871-3191-8d0c-1eb81140069d",
               "name": "resources.rules.string-concat-in-list",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.string-concat-in-list"
@@ -1284,7 +1284,7 @@
               }
             },
             {
-              "id": "42678b78-35d7-3ac2-bd2e-c61d98b13256",
+              "id": "0191b650-fed6-3d10-899f-cc669906ed09",
               "name": "resources.rules.string-concat-in-list",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.string-concat-in-list"
@@ -1308,7 +1308,7 @@
               }
             },
             {
-              "id": "0191b650-fed6-3d10-899f-cc669906ed09",
+              "id": "42678b78-35d7-3ac2-bd2e-c61d98b13256",
               "name": "resources.rules.string-concat-in-list",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.string-concat-in-list"
@@ -1380,7 +1380,7 @@
               }
             },
             {
-              "id": "266a5233-90fd-37c6-97d4-948aa3987832",
+              "id": "bdf7810a-5493-3106-9290-e305f302cf5a",
               "name": "resources.rules.string-concat-in-list",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.string-concat-in-list"
@@ -1428,7 +1428,7 @@
               }
             },
             {
-              "id": "bdf7810a-5493-3106-9290-e305f302cf5a",
+              "id": "266a5233-90fd-37c6-97d4-948aa3987832",
               "name": "resources.rules.string-concat-in-list",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.string-concat-in-list"
@@ -1692,7 +1692,7 @@
               }
             },
             {
-              "id": "9914fe11-2ad0-32ad-a297-da9277c46dfe",
+              "id": "dff15895-583e-37f3-bf58-b5d67c74884f",
               "name": "resources.rules.string-concat-in-list",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.string-concat-in-list"
@@ -1716,7 +1716,7 @@
               }
             },
             {
-              "id": "dff15895-583e-37f3-bf58-b5d67c74884f",
+              "id": "9914fe11-2ad0-32ad-a297-da9277c46dfe",
               "name": "resources.rules.string-concat-in-list",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.string-concat-in-list"
@@ -2364,7 +2364,55 @@
               }
             },
             {
+              "id": "9df710a7-7546-38e9-b938-b6efc1e74e8f",
+              "name": "resources.rules.string-concat-in-list",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.string-concat-in-list"
+              },
+              "fullDescription": {
+                "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.string-concat-in-list"
+                ]
+              }
+            },
+            {
               "id": "74686e2f-ba36-38f5-8faa-ac20df14c2ae",
+              "name": "resources.rules.string-concat-in-list",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.string-concat-in-list"
+              },
+              "fullDescription": {
+                "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.string-concat-in-list"
+                ]
+              }
+            },
+            {
+              "id": "e693aad0-3735-3129-ba7a-61a542855438",
               "name": "resources.rules.string-concat-in-list",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.string-concat-in-list"
@@ -2412,7 +2460,7 @@
               }
             },
             {
-              "id": "e693aad0-3735-3129-ba7a-61a542855438",
+              "id": "15fdfcdd-d42b-3914-a9bc-5ddbd326f719",
               "name": "resources.rules.string-concat-in-list",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.string-concat-in-list"
@@ -2556,31 +2604,6 @@
               }
             },
             {
-              "id": "d8a7e077-12bb-3a39-abc0-f12ec3b83e1a",
-              "name": "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
-              "shortDescription": {
-                "text": "Opengrep Finding: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected"
-              },
-              "fullDescription": {
-                "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "helpUri": "https://semgrep.dev/r/python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
-              "help": {
-                "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected)\n - [https://cwe.mitre.org/data/definitions/939.html](https://cwe.mitre.org/data/definitions/939.html)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected"
-                ]
-              }
-            },
-            {
               "id": "9368a25b-a10f-3412-b762-83138fd0bbc7",
               "name": "trailofbits.python.tarfile-extractall-traversal.tarfile-extractall-traversal",
               "shortDescription": {
@@ -2606,27 +2629,27 @@
               }
             },
             {
-              "id": "a8a1331a-40eb-3d18-a92a-c6bd8f8baf77",
-              "name": "python.lang.security.deserialization.pickle.avoid-cPickle",
+              "id": "d8a7e077-12bb-3a39-abc0-f12ec3b83e1a",
+              "name": "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
               "shortDescription": {
-                "text": "Opengrep Finding: python.lang.security.deserialization.pickle.avoid-cPickle"
+                "text": "Opengrep Finding: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected"
               },
               "fullDescription": {
-                "text": "Avoid using `cPickle`, which is known to lead to code execution vulnerabilities. When unpickling, the serialized data could be manipulated to run arbitrary code. Instead, consider serializing the relevant data as JSON or a similar text-based serialization format."
+                "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
               },
               "defaultConfiguration": {
                 "enabled": true,
                 "level": "warning"
               },
-              "helpUri": "https://semgrep.dev/r/python.lang.security.deserialization.pickle.avoid-cPickle",
+              "helpUri": "https://semgrep.dev/r/python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
               "help": {
-                "text": "Avoid using `cPickle`, which is known to lead to code execution vulnerabilities. When unpickling, the serialized data could be manipulated to run arbitrary code. Instead, consider serializing the relevant data as JSON or a similar text-based serialization format.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Avoid using `cPickle`, which is known to lead to code execution vulnerabilities. When unpickling, the serialized data could be manipulated to run arbitrary code. Instead, consider serializing the relevant data as JSON or a similar text-based serialization format.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/python.lang.security.deserialization.pickle.avoid-cPickle)\n - [https://docs.python.org/3/library/pickle.html](https://docs.python.org/3/library/pickle.html)\n"
+                "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected)\n - [https://cwe.mitre.org/data/definitions/939.html](https://cwe.mitre.org/data/definitions/939.html)\n"
               },
               "properties": {
                 "precision": "very-high",
                 "tags": [
-                  "python.lang.security.deserialization.pickle.avoid-cPickle"
+                  "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected"
                 ]
               }
             },
@@ -2656,27 +2679,27 @@
               }
             },
             {
-              "id": "7e02a04e-2fde-3922-9818-75c9c99c21aa",
-              "name": "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
+              "id": "a8a1331a-40eb-3d18-a92a-c6bd8f8baf77",
+              "name": "python.lang.security.deserialization.pickle.avoid-cPickle",
               "shortDescription": {
-                "text": "Opengrep Finding: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected"
+                "text": "Opengrep Finding: python.lang.security.deserialization.pickle.avoid-cPickle"
               },
               "fullDescription": {
-                "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
+                "text": "Avoid using `cPickle`, which is known to lead to code execution vulnerabilities. When unpickling, the serialized data could be manipulated to run arbitrary code. Instead, consider serializing the relevant data as JSON or a similar text-based serialization format."
               },
               "defaultConfiguration": {
                 "enabled": true,
                 "level": "warning"
               },
-              "helpUri": "https://semgrep.dev/r/python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
+              "helpUri": "https://semgrep.dev/r/python.lang.security.deserialization.pickle.avoid-cPickle",
               "help": {
-                "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected)\n - [https://cwe.mitre.org/data/definitions/939.html](https://cwe.mitre.org/data/definitions/939.html)\n"
+                "text": "Avoid using `cPickle`, which is known to lead to code execution vulnerabilities. When unpickling, the serialized data could be manipulated to run arbitrary code. Instead, consider serializing the relevant data as JSON or a similar text-based serialization format.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Avoid using `cPickle`, which is known to lead to code execution vulnerabilities. When unpickling, the serialized data could be manipulated to run arbitrary code. Instead, consider serializing the relevant data as JSON or a similar text-based serialization format.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/python.lang.security.deserialization.pickle.avoid-cPickle)\n - [https://docs.python.org/3/library/pickle.html](https://docs.python.org/3/library/pickle.html)\n"
               },
               "properties": {
                 "precision": "very-high",
                 "tags": [
-                  "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected"
+                  "python.lang.security.deserialization.pickle.avoid-cPickle"
                 ]
               }
             },
@@ -2702,6 +2725,31 @@
                 "precision": "very-high",
                 "tags": [
                   "trailofbits.python.tarfile-extractall-traversal.tarfile-extractall-traversal"
+                ]
+              }
+            },
+            {
+              "id": "7e02a04e-2fde-3922-9818-75c9c99c21aa",
+              "name": "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
+              "shortDescription": {
+                "text": "Opengrep Finding: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected"
+              },
+              "fullDescription": {
+                "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "helpUri": "https://semgrep.dev/r/python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
+              "help": {
+                "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected)\n - [https://cwe.mitre.org/data/definitions/939.html](https://cwe.mitre.org/data/definitions/939.html)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected"
                 ]
               }
             },
@@ -2805,30 +2853,6 @@
               }
             },
             {
-              "id": "25e8cb54-38c0-307b-9d7d-15a6bb550be3",
-              "name": "resources.rules.return-not-in-function",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.return-not-in-function"
-              },
-              "fullDescription": {
-                "text": "`return` only makes sense inside a function"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "`return` only makes sense inside a function\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "`return` only makes sense inside a function\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.return-not-in-function"
-                ]
-              }
-            },
-            {
               "id": "f3d83d7a-fdcb-36e9-95f2-09b0a32c4ab2",
               "name": "python.lang.security.use-defused-xml-parse.use-defused-xml-parse",
               "shortDescription": {
@@ -2850,6 +2874,30 @@
                 "precision": "very-high",
                 "tags": [
                   "python.lang.security.use-defused-xml-parse.use-defused-xml-parse"
+                ]
+              }
+            },
+            {
+              "id": "25e8cb54-38c0-307b-9d7d-15a6bb550be3",
+              "name": "resources.rules.return-not-in-function",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.return-not-in-function"
+              },
+              "fullDescription": {
+                "text": "`return` only makes sense inside a function"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "`return` only makes sense inside a function\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "`return` only makes sense inside a function\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.return-not-in-function"
                 ]
               }
             },
@@ -2950,30 +2998,6 @@
               }
             },
             {
-              "id": "967e91a7-cb98-3e26-9bf7-5cf9253a02b1",
-              "name": "resources.rules.return-not-in-function",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.return-not-in-function"
-              },
-              "fullDescription": {
-                "text": "`return` only makes sense inside a function"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "`return` only makes sense inside a function\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "`return` only makes sense inside a function\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.return-not-in-function"
-                ]
-              }
-            },
-            {
               "id": "78778830-5536-31aa-a857-ae30f35dcd00",
               "name": "resources.rules.return-not-in-function",
               "shortDescription": {
@@ -3020,6 +3044,30 @@
                   "resources.rules.return-not-in-function"
                 ]
               }
+            },
+            {
+              "id": "967e91a7-cb98-3e26-9bf7-5cf9253a02b1",
+              "name": "resources.rules.return-not-in-function",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.return-not-in-function"
+              },
+              "fullDescription": {
+                "text": "`return` only makes sense inside a function"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "`return` only makes sense inside a function\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "`return` only makes sense inside a function\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.return-not-in-function"
+                ]
+              }
             }
           ],
           "language": "en-US",
@@ -3032,6 +3080,37 @@
       },
       "language": "en-US",
       "results": [
+        {
+          "ruleId": "6589617f-8aa7-3a0c-820b-3bb6c50f8fb3",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/object_detection/core/keypoint_ops.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 194,
+                  "startColumn": 31,
+                  "endLine": 195,
+                  "endColumn": 44,
+                  "snippet": {
+                    "text": "                             ['maximum keypoint coordinate value is larger '\n                              'than 1.01: ', max_val])"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "edf471f1b7525767814c9b5fd149b1c8b690c9aa6cf131ea480e19b5e9826376bd0c946528237891d113a3b7fc5917437279d0f19ae17b87f74809db035ddbbb_0"
+          },
+          "properties": {}
+        },
         {
           "ruleId": "8f61a726-64ac-32cb-8971-8e18519ea756",
           "kind": "fail",
@@ -3091,37 +3170,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "e0688960d72bfb048e7e8ead613e6ceb268cc4fede39e1fa4cba458fe8d8d9554460f7e25c92933e1ea1069699acd01b5c9f3c4b332681301c1fbe0fd13ced2e_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "6589617f-8aa7-3a0c-820b-3bb6c50f8fb3",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "models/research/object_detection/core/keypoint_ops.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 194,
-                  "startColumn": 31,
-                  "endLine": 195,
-                  "endColumn": 44,
-                  "snippet": {
-                    "text": "                             ['maximum keypoint coordinate value is larger '\n                              'than 1.01: ', max_val])"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "edf471f1b7525767814c9b5fd149b1c8b690c9aa6cf131ea480e19b5e9826376bd0c946528237891d113a3b7fc5917437279d0f19ae17b87f74809db035ddbbb_0"
           },
           "properties": {}
         },
@@ -3281,68 +3329,6 @@
           "properties": {}
         },
         {
-          "ruleId": "c7da71de-a8ad-326a-bc4e-81f6f34f46c2",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "models/research/object_detection/dockerfiles/android/Dockerfile",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 81,
-                  "startColumn": 1,
-                  "endLine": 81,
-                  "endColumn": 7,
-                  "snippet": {
-                    "text": "RUN cd /tmp && \\"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "44dd973d229223bdd52fe801289174d3251d859a270d56bf0f733681b2d70d9c29e74e29146a11e231b959cab381e1278d56476b9925309f51658c2c16aa91ae_3"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "8879ca19-176d-3207-beb0-740063f1f62f",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "models/research/object_detection/dockerfiles/android/Dockerfile",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 58,
-                  "startColumn": 1,
-                  "endLine": 58,
-                  "endColumn": 7,
-                  "snippet": {
-                    "text": "RUN cd /tensorflow/models/research && \\"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "44dd973d229223bdd52fe801289174d3251d859a270d56bf0f733681b2d70d9c29e74e29146a11e231b959cab381e1278d56476b9925309f51658c2c16aa91ae_1"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "8901e8ae-2fd7-3589-abbf-ef058e021935",
           "kind": "fail",
           "level": "warning",
@@ -3401,6 +3387,68 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "bf93bfcd6edb888c8f0f501d8f8c9907ba6431c270469aa87297b06ad4f3f60c2f0fc10d0b9388e48b4a08892276a1f0d5e9258bd9a5263d884cb3a763e37725_1"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "8879ca19-176d-3207-beb0-740063f1f62f",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/object_detection/dockerfiles/android/Dockerfile",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 1,
+                  "endLine": 58,
+                  "endColumn": 7,
+                  "snippet": {
+                    "text": "RUN cd /tensorflow/models/research && \\"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "44dd973d229223bdd52fe801289174d3251d859a270d56bf0f733681b2d70d9c29e74e29146a11e231b959cab381e1278d56476b9925309f51658c2c16aa91ae_1"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "c7da71de-a8ad-326a-bc4e-81f6f34f46c2",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/object_detection/dockerfiles/android/Dockerfile",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 81,
+                  "startColumn": 1,
+                  "endLine": 81,
+                  "endColumn": 7,
+                  "snippet": {
+                    "text": "RUN cd /tmp && \\"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "44dd973d229223bdd52fe801289174d3251d859a270d56bf0f733681b2d70d9c29e74e29146a11e231b959cab381e1278d56476b9925309f51658c2c16aa91ae_3"
           },
           "properties": {}
         },
@@ -3467,37 +3515,6 @@
           "properties": {}
         },
         {
-          "ruleId": "be5610c1-ac28-3598-9c57-aaf1f1e97acc",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Only the exit code from the final command in this RUN instruction will be evaluated unless 'pipefail' is set.\nIf you want to fail the command at any stage in the pipe, set 'pipefail' by including 'SHELL [\"/bin/bash\", \"-o\", \"pipefail\", \"-c\"] before the command.\nIf you're using alpine and don't have bash installed, communicate this explicitly with `SHELL [\"/bin/ash\"]`.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "models/research/object_detection/dockerfiles/android/Dockerfile",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 117,
-                  "startColumn": 1,
-                  "endLine": 117,
-                  "endColumn": 21,
-                  "snippet": {
-                    "text": "RUN yes | sdkmanager \\"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "08d235876e88c056e3f9fa6b95ebe2262ab21113bd05b573c658769f9b61843f056a1f70febdb7645351b469173bcfe9781affa0eee090e18733eb831c68b50a_1"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "ea058f43-8b8c-3566-84bc-63f6bbaa1d47",
           "kind": "fail",
           "level": "warning",
@@ -3525,6 +3542,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "08d235876e88c056e3f9fa6b95ebe2262ab21113bd05b573c658769f9b61843f056a1f70febdb7645351b469173bcfe9781affa0eee090e18733eb831c68b50a_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "be5610c1-ac28-3598-9c57-aaf1f1e97acc",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Only the exit code from the final command in this RUN instruction will be evaluated unless 'pipefail' is set.\nIf you want to fail the command at any stage in the pipe, set 'pipefail' by including 'SHELL [\"/bin/bash\", \"-o\", \"pipefail\", \"-c\"] before the command.\nIf you're using alpine and don't have bash installed, communicate this explicitly with `SHELL [\"/bin/ash\"]`.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/object_detection/dockerfiles/android/Dockerfile",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 117,
+                  "startColumn": 1,
+                  "endLine": 117,
+                  "endColumn": 21,
+                  "snippet": {
+                    "text": "RUN yes | sdkmanager \\"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "08d235876e88c056e3f9fa6b95ebe2262ab21113bd05b573c658769f9b61843f056a1f70febdb7645351b469173bcfe9781affa0eee090e18733eb831c68b50a_1"
           },
           "properties": {}
         },
@@ -3715,37 +3763,6 @@
           "properties": {}
         },
         {
-          "ruleId": "35b8fd77-0c3e-3c61-bbe7-b40ef327d521",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Found an unquoted CSV writer. This is susceptible to injection. Use 'quoting=csv.QUOTE_ALL'."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "models/research/object_detection/metrics/io_utils.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 32,
-                  "startColumn": 20,
-                  "endLine": 32,
-                  "endColumn": 50,
-                  "snippet": {
-                    "text": "  metrics_writer = csv.writer(fid, delimiter=',')"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "d6a3e07b0d6220228d80dccdd7256a71ad9275d730202bac3453daa73876c48abe95040ce50aad97225ddf45c1816e41e9ba65e16fb29994bbdb118903cdd297_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "1abf4806-ef44-34be-877b-8ed6f7f2d262",
           "kind": "fail",
           "level": "warning",
@@ -3777,6 +3794,37 @@
           "properties": {}
         },
         {
+          "ruleId": "35b8fd77-0c3e-3c61-bbe7-b40ef327d521",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Found an unquoted CSV writer. This is susceptible to injection. Use 'quoting=csv.QUOTE_ALL'."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/object_detection/metrics/io_utils.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 20,
+                  "endLine": 32,
+                  "endColumn": 50,
+                  "snippet": {
+                    "text": "  metrics_writer = csv.writer(fid, delimiter=',')"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "d6a3e07b0d6220228d80dccdd7256a71ad9275d730202bac3453daa73876c48abe95040ce50aad97225ddf45c1816e41e9ba65e16fb29994bbdb118903cdd297_0"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "919eaec1-cdcb-312f-90ce-78f11e0176b3",
           "kind": "fail",
           "level": "warning",
@@ -3804,6 +3852,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "9341ff2d5b99843a5e55dec8916e53e78acf73ebca5839a726e1d9d3cb9808bacc387d3dbc4fbe3e39195d7c06231556258e65578e949cf156af6ee34c42fd94_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "88579926-ab7e-3b5a-9e54-ad3cd193f2c5",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Found an unquoted CSV writer. This is susceptible to injection. Use 'quoting=csv.QUOTE_ALL'."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/object_detection/metrics/offline_eval_map_corloc.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 145,
+                  "startColumn": 22,
+                  "endLine": 145,
+                  "endColumn": 56,
+                  "snippet": {
+                    "text": "    metrics_writer = csv.writer(csvfile, delimiter=',')"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "09044888e9df1e9921f19e8103962a0761b886063f450b6f38ca0e035c395fb3ebb708313ea0af4fec599e5edf44c1699a1442402578bff0d4b551f97e9a45d7_0"
           },
           "properties": {}
         },
@@ -3866,37 +3945,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "72eb259131c8ce53c7a838eb8c0dd287e083dcdea76625d8b1fbbafe8cbcbae6645a1da21c5a45d1a86aa516aff9405c9f02d18fdf5d4eb2d5dbdfcb1ea4e5b2_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "88579926-ab7e-3b5a-9e54-ad3cd193f2c5",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Found an unquoted CSV writer. This is susceptible to injection. Use 'quoting=csv.QUOTE_ALL'."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "models/research/object_detection/metrics/offline_eval_map_corloc.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 145,
-                  "startColumn": 22,
-                  "endLine": 145,
-                  "endColumn": 56,
-                  "snippet": {
-                    "text": "    metrics_writer = csv.writer(csvfile, delimiter=',')"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "09044888e9df1e9921f19e8103962a0761b886063f450b6f38ca0e035c395fb3ebb708313ea0af4fec599e5edf44c1699a1442402578bff0d4b551f97e9a45d7_0"
           },
           "properties": {}
         },
@@ -4056,37 +4104,6 @@
           "properties": {}
         },
         {
-          "ruleId": "e6222a69-83f3-3eff-9191-b558768584fd",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "models/research/object_detection/predictors/convolutional_box_predictor_test.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 493,
-                  "startColumn": 9,
-                  "endLine": 494,
-                  "endColumn": 65,
-                  "snippet": {
-                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'BoxPredictionTower/conv2d_1/BatchNorm/feature_0/beta'),"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_4"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "f57c5bb1-d5c3-3ff2-ab68-a1b27aa1675d",
           "kind": "fail",
           "level": "warning",
@@ -4114,6 +4131,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_5"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "e6222a69-83f3-3eff-9191-b558768584fd",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/object_detection/predictors/convolutional_box_predictor_test.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 493,
+                  "startColumn": 9,
+                  "endLine": 494,
+                  "endColumn": 65,
+                  "snippet": {
+                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'BoxPredictionTower/conv2d_1/BatchNorm/feature_0/beta'),"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_4"
           },
           "properties": {}
         },
@@ -4211,37 +4259,6 @@
           "properties": {}
         },
         {
-          "ruleId": "b1c0b718-85e2-3dd3-a39f-3b23c2787e3a",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "models/research/object_detection/predictors/convolutional_box_predictor_test.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 505,
-                  "startColumn": 9,
-                  "endLine": 506,
-                  "endColumn": 67,
-                  "snippet": {
-                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'ClassPredictionTower/conv2d_0/BatchNorm/feature_0/beta'),"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_9"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "32f17061-1f41-39aa-be44-8df74e74bc9a",
           "kind": "fail",
           "level": "warning",
@@ -4273,6 +4290,37 @@
           "properties": {}
         },
         {
+          "ruleId": "b1c0b718-85e2-3dd3-a39f-3b23c2787e3a",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/object_detection/predictors/convolutional_box_predictor_test.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 505,
+                  "startColumn": 9,
+                  "endLine": 506,
+                  "endColumn": 67,
+                  "snippet": {
+                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'ClassPredictionTower/conv2d_0/BatchNorm/feature_0/beta'),"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_9"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "b2b551a3-4319-3173-9521-addb8336f4cb",
           "kind": "fail",
           "level": "warning",
@@ -4300,37 +4348,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_11"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "54b38b04-e8ef-35e8-a85d-aa392c2e4bec",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "models/research/object_detection/predictors/convolutional_box_predictor_test.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 511,
-                  "startColumn": 9,
-                  "endLine": 512,
-                  "endColumn": 67,
-                  "snippet": {
-                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'ClassPredictionTower/conv2d_1/BatchNorm/feature_0/beta'),"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_12"
           },
           "properties": {}
         },
@@ -4397,6 +4414,37 @@
           "properties": {}
         },
         {
+          "ruleId": "54b38b04-e8ef-35e8-a85d-aa392c2e4bec",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/object_detection/predictors/convolutional_box_predictor_test.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 511,
+                  "startColumn": 9,
+                  "endLine": 512,
+                  "endColumn": 67,
+                  "snippet": {
+                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'ClassPredictionTower/conv2d_1/BatchNorm/feature_0/beta'),"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_12"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "251f9d19-47bc-3253-8cad-4384ead969df",
           "kind": "fail",
           "level": "warning",
@@ -4424,6 +4472,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_15"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "9b8c52a2-5592-35ab-b6ff-42d3d0a71299",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/object_detection/predictors/convolutional_box_predictor_test.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 555,
+                  "startColumn": 9,
+                  "endLine": 556,
+                  "endColumn": 47,
+                  "snippet": {
+                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'BoxPredictionTower/conv2d_0/biases'),"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_17"
           },
           "properties": {}
         },
@@ -4490,37 +4569,6 @@
           "properties": {}
         },
         {
-          "ruleId": "9b8c52a2-5592-35ab-b6ff-42d3d0a71299",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "models/research/object_detection/predictors/convolutional_box_predictor_test.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 555,
-                  "startColumn": 9,
-                  "endLine": 556,
-                  "endColumn": 47,
-                  "snippet": {
-                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'BoxPredictionTower/conv2d_0/biases'),"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_17"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "25c662ac-e3c1-3870-918d-6e1383e1b227",
           "kind": "fail",
           "level": "warning",
@@ -4552,37 +4600,6 @@
           "properties": {}
         },
         {
-          "ruleId": "0cedfc6c-8871-3191-8d0c-1eb81140069d",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "models/research/object_detection/predictors/convolutional_box_predictor_test.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 564,
-                  "startColumn": 9,
-                  "endLine": 565,
-                  "endColumn": 32,
-                  "snippet": {
-                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'BoxPredictor/biases'),"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_21"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "cf9c9fa1-aeba-3bbe-9b07-d74816ffc282",
           "kind": "fail",
           "level": "warning",
@@ -4610,6 +4627,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_20"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "0cedfc6c-8871-3191-8d0c-1eb81140069d",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/object_detection/predictors/convolutional_box_predictor_test.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 564,
+                  "startColumn": 9,
+                  "endLine": 565,
+                  "endColumn": 32,
+                  "snippet": {
+                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'BoxPredictor/biases'),"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_21"
           },
           "properties": {}
         },
@@ -4676,37 +4724,6 @@
           "properties": {}
         },
         {
-          "ruleId": "42678b78-35d7-3ac2-bd2e-c61d98b13256",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "models/research/object_detection/predictors/convolutional_box_predictor_test.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 571,
-                  "startColumn": 9,
-                  "endLine": 572,
-                  "endColumn": 50,
-                  "snippet": {
-                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'ClassPredictionTower/conv2d_1/weights'),"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_24"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "0191b650-fed6-3d10-899f-cc669906ed09",
           "kind": "fail",
           "level": "warning",
@@ -4734,6 +4751,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_25"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "42678b78-35d7-3ac2-bd2e-c61d98b13256",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/object_detection/predictors/convolutional_box_predictor_test.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 571,
+                  "startColumn": 9,
+                  "endLine": 572,
+                  "endColumn": 50,
+                  "snippet": {
+                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'ClassPredictionTower/conv2d_1/weights'),"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_24"
           },
           "properties": {}
         },
@@ -4800,7 +4848,7 @@
           "properties": {}
         },
         {
-          "ruleId": "266a5233-90fd-37c6-97d4-948aa3987832",
+          "ruleId": "bdf7810a-5493-3106-9290-e305f302cf5a",
           "kind": "fail",
           "level": "warning",
           "message": {
@@ -4814,19 +4862,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 618,
+                  "startLine": 614,
                   "startColumn": 9,
-                  "endLine": 619,
-                  "endColumn": 47,
+                  "endLine": 615,
+                  "endColumn": 58,
                   "snippet": {
-                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'BoxPredictionTower/conv2d_0/biases'),"
+                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'BoxPredictionTower/conv2d_0/depthwise_weights'),"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_30"
+            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_28"
           },
           "properties": {}
         },
@@ -4862,7 +4910,7 @@
           "properties": {}
         },
         {
-          "ruleId": "bdf7810a-5493-3106-9290-e305f302cf5a",
+          "ruleId": "266a5233-90fd-37c6-97d4-948aa3987832",
           "kind": "fail",
           "level": "warning",
           "message": {
@@ -4876,19 +4924,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 614,
+                  "startLine": 618,
                   "startColumn": 9,
-                  "endLine": 615,
-                  "endColumn": 58,
+                  "endLine": 619,
+                  "endColumn": 47,
                   "snippet": {
-                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'BoxPredictionTower/conv2d_0/depthwise_weights'),"
+                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'BoxPredictionTower/conv2d_0/biases'),"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_28"
+            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_30"
           },
           "properties": {}
         },
@@ -5230,37 +5278,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_42"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "dff15895-583e-37f3-bf58-b5d67c74884f",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "models/research/object_detection/predictors/convolutional_box_predictor_test.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 642,
-                  "startColumn": 9,
-                  "endLine": 643,
-                  "endColumn": 60,
-                  "snippet": {
-                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'ClassPredictionTower/conv2d_1/pointwise_weights'),"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_41"
           },
           "properties": {}
         },
@@ -6102,7 +6119,7 @@
           "properties": {}
         },
         {
-          "ruleId": "a7eee0fb-c2ee-3dc4-9ab0-5c760f1c2eec",
+          "ruleId": "74686e2f-ba36-38f5-8faa-ac20df14c2ae",
           "kind": "fail",
           "level": "warning",
           "message": {
@@ -6116,19 +6133,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 807,
+                  "startLine": 805,
                   "startColumn": 9,
-                  "endLine": 808,
-                  "endColumn": 44,
+                  "endLine": 806,
+                  "endColumn": 45,
                   "snippet": {
-                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'PredictionTower/conv2d_1/biases'),"
+                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'PredictionTower/conv2d_1/weights'),"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_71"
+            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_70"
           },
           "properties": {}
         },
@@ -6160,6 +6177,68 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_72"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "a7eee0fb-c2ee-3dc4-9ab0-5c760f1c2eec",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/object_detection/predictors/convolutional_box_predictor_test.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 807,
+                  "startColumn": 9,
+                  "endLine": 808,
+                  "endColumn": 44,
+                  "snippet": {
+                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'PredictionTower/conv2d_1/biases'),"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_71"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "15fdfcdd-d42b-3914-a9bc-5ddbd326f719",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected strings that are implicitly concatenated inside a list.\nPython will implicitly concatenate strings when not explicitly delimited.\nWas this supposed to be individual elements of the list?\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/object_detection/predictors/convolutional_box_predictor_test.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 812,
+                  "startColumn": 9,
+                  "endLine": 813,
+                  "endColumn": 32,
+                  "snippet": {
+                    "text": "        ('BoxPredictor/WeightSharedConvolutionalBoxPredictor/'\n         'BoxPredictor/biases'),"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "13b084f12e27a615984ea6d436e0e628fe4e622157e94cb7b4b38b1074131e49b9bc8ab23fca596a3747dcfdaf8bdff1595dff2d32a9fd0e7c4b71d1ce45e733_73"
           },
           "properties": {}
         },
@@ -6319,37 +6398,6 @@
           "properties": {}
         },
         {
-          "ruleId": "d8a7e077-12bb-3a39-abc0-f12ec3b83e1a",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "models/research/slim/datasets/dataset_utils.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 94,
-                  "startColumn": 17,
-                  "endLine": 94,
-                  "endColumn": 77,
-                  "snippet": {
-                    "text": "  filepath, _ = urllib.request.urlretrieve(tarball_url, filepath, _progress)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "f7ec3883ef1cb0160c16c7b4df3f1e5e9dca76fcfb2b6fae5588618393332de6920c7c3f17ca05089e1496337bef83efadbbb42f10da41cf2cc8295c71071525_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "9368a25b-a10f-3412-b762-83138fd0bbc7",
           "kind": "fail",
           "level": "warning",
@@ -6381,33 +6429,33 @@
           "properties": {}
         },
         {
-          "ruleId": "a8a1331a-40eb-3d18-a92a-c6bd8f8baf77",
+          "ruleId": "d8a7e077-12bb-3a39-abc0-f12ec3b83e1a",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Avoid using `cPickle`, which is known to lead to code execution vulnerabilities. When unpickling, the serialized data could be manipulated to run arbitrary code. Instead, consider serializing the relevant data as JSON or a similar text-based serialization format."
+            "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "models/research/slim/datasets/download_and_convert_cifar10.py",
+                  "uri": "models/research/slim/datasets/dataset_utils.py",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 77,
-                  "startColumn": 14,
-                  "endLine": 77,
-                  "endColumn": 29,
+                  "startLine": 94,
+                  "startColumn": 17,
+                  "endLine": 94,
+                  "endColumn": 77,
                   "snippet": {
-                    "text": "      data = cPickle.load(f)"
+                    "text": "  filepath, _ = urllib.request.urlretrieve(tarball_url, filepath, _progress)"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "63d0195c4ff7ca4c90e6adc0c60e9c0a428a7b0281a60058a0ba24770cdaedbbc7c8b30118ef8fe55b1cab9c32333cb3fe6b8344bb599042ad34334f0ad7192b_0"
+            "matchBasedId/v1": "f7ec3883ef1cb0160c16c7b4df3f1e5e9dca76fcfb2b6fae5588618393332de6920c7c3f17ca05089e1496337bef83efadbbb42f10da41cf2cc8295c71071525_0"
           },
           "properties": {}
         },
@@ -6443,11 +6491,11 @@
           "properties": {}
         },
         {
-          "ruleId": "7e02a04e-2fde-3922-9818-75c9c99c21aa",
+          "ruleId": "a8a1331a-40eb-3d18-a92a-c6bd8f8baf77",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
+            "text": "Avoid using `cPickle`, which is known to lead to code execution vulnerabilities. When unpickling, the serialized data could be manipulated to run arbitrary code. Instead, consider serializing the relevant data as JSON or a similar text-based serialization format."
           },
           "locations": [
             {
@@ -6457,19 +6505,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 138,
-                  "startColumn": 19,
-                  "endLine": 138,
-                  "endColumn": 77,
+                  "startLine": 77,
+                  "startColumn": 14,
+                  "endLine": 77,
+                  "endColumn": 29,
                   "snippet": {
-                    "text": "    filepath, _ = urllib.request.urlretrieve(_DATA_URL, filepath, _progress)"
+                    "text": "      data = cPickle.load(f)"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "189ff62b96eb54dbf13b3f778eafc4761b421208c9c16feea846f4f911578534d07b5faadceed5bfc910550e6fba374e2a970df2870864d2e10b68acb6761e39_0"
+            "matchBasedId/v1": "63d0195c4ff7ca4c90e6adc0c60e9c0a428a7b0281a60058a0ba24770cdaedbbc7c8b30118ef8fe55b1cab9c32333cb3fe6b8344bb599042ad34334f0ad7192b_0"
           },
           "properties": {}
         },
@@ -6501,6 +6549,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "4fca061fb4f122897fe8d228c4f861d007ee57fcc4a820bbafb99185767ab0f99b192393205e7f3f2a7afdeb8e6d238f88da70629bd0a2ac8b1db169af0474db_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "7e02a04e-2fde-3922-9818-75c9c99c21aa",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/slim/datasets/download_and_convert_cifar10.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 138,
+                  "startColumn": 19,
+                  "endLine": 138,
+                  "endColumn": 77,
+                  "snippet": {
+                    "text": "    filepath, _ = urllib.request.urlretrieve(_DATA_URL, filepath, _progress)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "189ff62b96eb54dbf13b3f778eafc4761b421208c9c16feea846f4f911578534d07b5faadceed5bfc910550e6fba374e2a970df2870864d2e10b68acb6761e39_0"
           },
           "properties": {}
         },
@@ -6629,37 +6708,6 @@
           "properties": {}
         },
         {
-          "ruleId": "25e8cb54-38c0-307b-9d7d-15a6bb550be3",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "`return` only makes sense inside a function"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "models/research/slim/nets/alexnet.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 42,
-                  "startColumn": 31,
-                  "endLine": 42,
-                  "endColumn": 75,
-                  "snippet": {
-                    "text": "trunc_normal = lambda stddev: tf.truncated_normal_initializer(0.0, stddev)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "0fe268cd7e3faadce2dd41c35f663407cb23681bee05e702cbb85e887d12bb33c3a4aa8842f31cbfb9a7daf44984d379d38b63d336b441c0eaff0bf7eb705a0d_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "f3d83d7a-fdcb-36e9-95f2-09b0a32c4ab2",
           "kind": "fail",
           "level": "warning",
@@ -6687,6 +6735,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "de5e3a5e606722591b3e58c582253d2fc7fbf91a35a0a43d68554b7cfdf9beff6abcdfcf72700c134029d9428f019c6bc47d5dcee9851a2da1bcb01774ea62be_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "25e8cb54-38c0-307b-9d7d-15a6bb550be3",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "`return` only makes sense inside a function"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/slim/nets/alexnet.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 42,
+                  "startColumn": 31,
+                  "endLine": 42,
+                  "endColumn": 75,
+                  "snippet": {
+                    "text": "trunc_normal = lambda stddev: tf.truncated_normal_initializer(0.0, stddev)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "0fe268cd7e3faadce2dd41c35f663407cb23681bee05e702cbb85e887d12bb33c3a4aa8842f31cbfb9a7daf44984d379d38b63d336b441c0eaff0bf7eb705a0d_0"
           },
           "properties": {}
         },
@@ -6815,37 +6894,6 @@
           "properties": {}
         },
         {
-          "ruleId": "967e91a7-cb98-3e26-9bf7-5cf9253a02b1",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "`return` only makes sense inside a function"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "models/research/slim/nets/overfeat.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 37,
-                  "startColumn": 31,
-                  "endLine": 37,
-                  "endColumn": 75,
-                  "snippet": {
-                    "text": "trunc_normal = lambda stddev: tf.truncated_normal_initializer(0.0, stddev)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "57d91c6d9f9339bdd28b32eb3cad6fff0e18142dfd5e2fd55dd9521dcc886a24ee43a53ae86e0f18bb8e59772a8db86c40333523786a7d25ca854c257bb94c25_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "78778830-5536-31aa-a857-ae30f35dcd00",
           "kind": "fail",
           "level": "warning",
@@ -6904,6 +6952,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "6896d3f9e357a7e2d7198e6d6c2900cc5736a5e8aab49dbbd2bc1bb9b8864e3f5846e11a04d5c4af5990522bc7933e98c69fbe71ed314644a057e37a54987014_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "967e91a7-cb98-3e26-9bf7-5cf9253a02b1",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "`return` only makes sense inside a function"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/research/slim/nets/overfeat.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 31,
+                  "endLine": 37,
+                  "endColumn": 75,
+                  "snippet": {
+                    "text": "trunc_normal = lambda stddev: tf.truncated_normal_initializer(0.0, stddev)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "57d91c6d9f9339bdd28b32eb3cad6fff0e18142dfd5e2fd55dd9521dcc886a24ee43a53ae86e0f18bb8e59772a8db86c40333523786a7d25ca854c257bb94c25_0"
           },
           "properties": {}
         }
